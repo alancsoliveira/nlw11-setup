@@ -3,21 +3,19 @@ const nlwSetup = new NLWSetup(form)
 const button = document.querySelector("header button")
 
 button.addEventListener("click", add)
+button.addEventListener("change", save)
 
 function add() {
-  const today = "01/01"
-  nlwSetup.addDay("01/01")
+  const today = new Date().toLocaleDateString("pt-br").slice(0, -5)
   const dayExists = nlwSetup.dayExists(today)
-  alert(dayExists)
-
+  alert(today)
   if (dayExists) {
+    alert("Dia já incluso")
+  } else {
+    nlwSetup.addDay(today)
   }
 }
-// const data = {
-//   run: ["01-01", "01-02", "01-06", "01-07", "01-08", "01-09"],
-//   water: ["01-12", "01-05"],
-//   food: ["01-01", "01-03"],
-//   takePills: ["01-03"],
-// }
-// nlwSetup.setData(data)
-// nlwSetup.load()
+
+function save() {
+  
+}
