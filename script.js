@@ -1,4 +1,4 @@
-const form = cdocument.querySeletor("#form-habits")
+const form = document.querySelector("#form-habits")
 const nlwSetup = new NLWSetup(form)
 const button = document.querySelector("header button")
 
